@@ -253,7 +253,7 @@ public final class ConfigFactory {
 				.setSaveConsumer(val -> modConfig.setRanged("min_render_dist", val))
 				.setDefaultValue((int) modConfig.getDefault("min_render_dist"))
 				.build());
-		waypoints.addEntry(entryBuilder.startIntSlider(lang("max_render_dist"), modConfig.getInt("max_render_dist"), 10, 3000)
+		waypoints.addEntry(entryBuilder.startIntSlider(lang("max_render_dist"), modConfig.getInt("max_render_dist"), 10, 5000)
 				.setSaveConsumer(val -> modConfig.setRanged("max_render_dist", val))
 				.setDefaultValue((int) modConfig.getDefault("max_render_dist"))
 				.build());
