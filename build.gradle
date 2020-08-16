@@ -40,6 +40,7 @@ minecraft {}
 
 repositories {
 	maven { url "https://maven.fabricmc.net/" }
+	maven { url "https://jitpack.io" }
 	jcenter()
 	flatDir {
 		dirs 'libs'
@@ -56,6 +57,12 @@ dependencies {
 	modCompile "me.shedaniel.cloth:config-2:${project.cloth_version}"
 	
 	include "me.shedaniel.cloth:config-2:${project.cloth_version}"
+
+	// DataBreaker applies a number of patches to eliminate the loading of data fixers
+	// This greatly reduces the amount of time needed to start the game, but is generally unsafe in production
+	modRuntime ("com.github.SuperCoder7979:databreaker:${project.databreaker_version}") {
+		transitive = false
+	}
 }
 
 processResources {
