@@ -86,7 +86,7 @@ public class ClientConfig extends Config {
 		KEEPER.registerEntry("render_markers", new BooleanEntry(ClientSettings.renderMarkers, (b) -> ClientSettings.renderMarkers = b, () -> ClientSettings.renderMarkers));
 		KEEPER.registerEntry("render_animation", new BooleanEntry(ClientSettings.renderAnimation, (b) -> ClientSettings.renderAnimation = b, () -> ClientSettings.renderAnimation));
 		KEEPER.registerEntry("min_render_dist", new IntegerRange(ClientSettings.minRenderDist, (i) -> ClientSettings.minRenderDist = i, () -> ClientSettings.minRenderDist, 1, 100));
-		KEEPER.registerEntry("max_render_dist", new IntegerRange(ClientSettings.maxRenderDist, (i) -> ClientSettings.maxRenderDist = i, () -> ClientSettings.maxRenderDist, 10, 3000));
+		KEEPER.registerEntry("max_render_dist", new IntegerRange(ClientSettings.maxRenderDist, (i) -> ClientSettings.maxRenderDist = i, () -> ClientSettings.maxRenderDist, 10, 5000));
 		KEEPER.registerEntry("show_entities", new BooleanEntry(ClientSettings.showEntities, (b) -> ClientSettings.showEntities = b, () -> ClientSettings.showEntities));
 		KEEPER.registerEntry("show_entity_heads", new BooleanEntry(ClientSettings.showEntityHeads, (b) -> ClientSettings.showEntityHeads = b, () -> ClientSettings.showEntityHeads));
 		KEEPER.registerEntry("show_hostile", new BooleanEntry(ClientSettings.showHostile, (b) -> ClientSettings.showHostile = b, () -> ClientSettings.showHostile));
