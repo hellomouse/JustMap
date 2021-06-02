@@ -243,7 +243,7 @@ public final class WorldManager {
 		long usedPct = MemoryUtil.getMemoryUsage();
 		if (usedPct >= 85L) {
 			cacheClearing = true;
-			JustMap.LOGGER.debug(String.format("Memory usage at %2d%%, forcing garbage collection.", usedPct));
+			JustMap.LOGGER.debug(String.format("Memory usage at %2d%%, clearing cache.", usedPct));
 			JustMap.WORKER.execute("Hard cache clearing...", () -> {
 				int amount = ClientSettings.purgeAmount * 10;
 				synchronized (worldsData) {
@@ -253,7 +253,8 @@ public final class WorldManager {
 						}
 					});
 				}
-				System.gc();
+                // BUT WHY
+                // System.gc();
 				cacheClearing = false;
 			});
 			usedPct = MemoryUtil.getMemoryUsage();
